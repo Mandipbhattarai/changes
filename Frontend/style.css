@@ -1,0 +1,157 @@
+body{
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+/* Outer Container */
+.outermost_container {
+    display: flex;
+}
+/* Navbar Styles */
+.navbar {
+    background-color: #2e2d2e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed !important;
+    height: 100%; 
+    width: 300px; 
+    z-index: 1;
+    top: 0; 
+    left: 0;
+    background-color: #111; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px; /* Optional: Add some padding for better aesthetics */
+}
+
+/* Logo Styles */
+.logo {
+    list-style: none;
+    margin: 10px 0 20px;
+}
+
+.logo li a {
+    font-size: 24px;
+    text-decoration: none;
+    background-color: #a0a293;
+    padding: 10px;
+    margin: 4px;
+    white-space: nowrap;
+    border-radius: 50px;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-bottom: 30px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.nav-links li a:hover {
+    color: rgb(3, 3, 251);
+}
+
+.nav-links li a::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 100%;
+    height: 3px;
+    background-color: rgb(4, 4, 237);
+    transition: transform 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+.nav-links li a.active {
+    border-bottom: 3px solid blue;
+}
+
+/* Navigation Buttons */
+.nav-buttons {
+    margin-top: auto;
+    margin-bottom: 6px;
+}
+
+.nav-buttons a {
+    text-decoration: none;
+    color: #fff;
+    padding: 8px 16px;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    margin-bottom: 10px;
+}
+
+.nav-buttons a:hover {
+    background-color: #fff;
+    color: #1a241c;
+}
+
+/* Additional styles for beautiful design on the right side */
+.container_right_side_of_page {
+    /* Add your container styles here */
+    margin-left: 300px;
+    padding: 0px 10px;
+}
+
+/* Additional styles for responsive design */
+@media screen and (max-width: 1024px) {
+    .navbar {
+        width: 20%;
+    }
+    .nav-links li {
+        margin-bottom: 30px;
+    }
+    .logo {
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        justify-content: flex-start;
+        padding: 0;
+        width: 20%; /* Set the width of the navbar to 20% in smaller screens */
+    }
+    .nav-links {
+        flex-direction: column;
+    }
+    .nav-links li {
+        margin-bottom: 30px;
+    }
+    .logo {
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .nav-links {
+        flex-wrap: wrap;
+    }
+    .nav-links li {
+        margin-bottom: 20px;
+    }
+    .logo {
+        margin-bottom: 20px;
+    }
+}
